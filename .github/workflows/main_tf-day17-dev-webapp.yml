@@ -70,5 +70,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'tf-day17-dev-webapp'
-          slot-name: 'Production'
+          slot-name: 'green'
           
