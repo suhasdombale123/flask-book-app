@@ -9,8 +9,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 db.init_app(app)
  
-@app.before_first_request
-def create_table():
+with app.app_context():
     db.create_all()
  
  
