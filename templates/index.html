@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beta Book Store</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        table { border-collapse: collapse; width: 60%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f4f4f4; }
+        form { margin-top: 30px; }
+        input { margin: 5px; padding: 6px; }
+        button { padding: 6px 12px; }
+    </style>
+</head>
+<body>
+
+<h1>📚 Beta Book Store</h1>
+
+<h2>Available Books</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Author</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.name }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Add a New Book</h2>
+<form method="POST">
+    <input type="text" name="name" placeholder="Book name" required>
+    <input type="number" step="0.01" name="price" placeholder="Price" required>
+    <input type="text" name="author" placeholder="Author" required>
+    <button type="submit">Add Book</button>
+</form>
+
+<hr>
+<p>
+    🔗 API endpoints:
+    <br>
+    <a href="/books" target="_blank">/books</a>
+</p>
+
+</body>
+</html>
